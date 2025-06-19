@@ -35,6 +35,7 @@ int main() {
 		cout << "------------------------------------------\n";
 	}
 	//Mayor ventas(numero y nombre)
+	cout<<"\n==================MAYOR-VENTA==================="<<endl;	
 	float may_venta=-1;
 	int mayor=-1;
 	for(int i=0;i<n;i++){
@@ -54,7 +55,7 @@ int main() {
 		cout<< "Total Ventas: " << may_venta << endl;
 	}
 	//Incremento de ventas
-	cout<<"----------------INCREMENTO----------------"<<endl;
+	cout<<"\n=====================INCREMENTO===================="<<endl;
 	bool incremento = false;
 	for(int i=0;i<n;i++){
 		float max_venta=0;
@@ -70,5 +71,19 @@ int main() {
 	if(!incremento){
 		cout<<"Ningun empleado supero las 100 ventas"<<endl;
 	}
+	//Listar a empleados con ventas menores a 30
+	cout<<"\n===============MENORES-VENTAS-EN-DICIEMBRE=================="<<endl;
+	bool menor = false;
+	for(int i=0;i<n;i++){
+		if(EMPLEADOS[i].ven[11]<30){
+			cout<<"Num empleado: "<<EMPLEADOS[i].num<<endl;
+			cout<<"Nombre: "<<EMPLEADOS[i].nom<<endl;
+			cout<<"-----------------------------------"<<endl;
+			menor=true;
+		}
+	}
+	if(!menor){
+		cout<<"Ningun empleado tuvo ventas menores a 30"<<endl;
+	}	
 	return 0;
 }
