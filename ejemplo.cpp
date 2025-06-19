@@ -11,7 +11,7 @@ struct EMP {
 int main() {
 	EMP EMPLEADOS[100];
 	int n;
-
+	//Registro de datos
 	cout << "Ingrese la cantidad de empleados: ";
 	cin >> n;
 	cout << "\n========= REGISTRO DE EMPLEADOS =========\n";
@@ -34,6 +34,24 @@ int main() {
 
 		cout << "------------------------------------------\n";
 	}
-
+	//Mayor ventas(numero y nombre)
+	float may_venta=-1;
+	int mayor=-1;
+	for(int i=0;i<n;i++){
+			float suma=0;
+		for(int j=0;j<12;j++){
+			suma=suma+EMPLEADOS[i].ven[j];
+		}
+		if(suma>may_venta){
+			may_venta=suma;
+			mayor=i;
+		}
+	}	
+	if (mayor != -1) {
+		cout << "Empleado con mayores ventas anuales:\n";
+		cout << "Num empleado: " << EMPLEADOS[mayor].num<<endl;
+		cout<<"Nombre: " << EMPLEADOS[mayor].nom<<endl;
+		cout<< "Total Ventas: " << may_venta << endl;
+	}
 	return 0;
 }
