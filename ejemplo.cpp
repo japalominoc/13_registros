@@ -53,5 +53,22 @@ int main() {
 		cout<<"Nombre: " << EMPLEADOS[mayor].nom<<endl;
 		cout<< "Total Ventas: " << may_venta << endl;
 	}
+	//Incremento de ventas
+	cout<<"----------------INCREMENTO----------------"<<endl;
+	bool incremento = false;
+	for(int i=0;i<n;i++){
+		float max_venta=0;
+		for(int j=0;j<12;j++){
+			max_venta=max_venta+EMPLEADOS[i].ven[j];
+		}
+		if(max_venta>100){
+			EMPLEADOS[i].sal= EMPLEADOS[i].sal*1.10;
+			cout<<"El nuevo salario para "<<EMPLEADOS[i].nom<<" es: "<<EMPLEADOS[i].sal<<endl;
+			incremento=true;
+		}
+	}
+	if(!incremento){
+		cout<<"Ningun empleado supero las 100 ventas"<<endl;
+	}
 	return 0;
 }
